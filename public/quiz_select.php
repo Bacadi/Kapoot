@@ -11,17 +11,22 @@ $quizzes = $req->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>quiz select</title>
+    <title>Quiz select</title>
 </head>
 
 <body>
+    <header>
+        <a href="logout.php">Déconnexion</a>
+    </header>
     <main>
+        <h1>Bonjour <?= htmlspecialchars($_SESSION['pseudo'], ENT_QUOTES, 'UTF-8') ?></h1>
         <section id="quizList">
-            <?php
-            foreach ($quizzes as $quiz):?>
+            <h2>Liste des quizzes</h2>
+            <?php foreach ($quizzes as $quiz): ?>
                 <div class="quizCard">
-                    <h2>Quiz n° <?= htmlspecialchars($quiz['id'])?></h2>
-                    <h3><?= htmlspecialchars($quiz['title']) ?></h3>
+                    <h3><?= htmlspecialchars($quiz['title'], ENT_QUOTES, 'UTF-8') ?></h3>
+                    <p><?= htmlspecialchars($quiz['description'], ENT_QUOTES, 'UTF-8') ?></p>
+                    <a class="playBtn" href="play.php?id=<?= (int) $quiz['id'] ?>">Jouer</a>
                 </div>
             <?php endforeach; ?>
         </section>
