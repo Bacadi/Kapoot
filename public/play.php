@@ -46,6 +46,7 @@ foreach ($questions as $i => $question) {
 
 <body>
     <main>
+        <a href="quiz_select.php">Quitter</a>
         <h1><?= htmlspecialchars($quiz['title'], ENT_QUOTES, 'UTF-8') ?></h1>
         <p>Score : <span id="score">0</span> | Temps : <span id="timer"></span></p>
         <div id="quiz"></div>
