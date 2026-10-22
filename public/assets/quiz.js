@@ -65,6 +65,8 @@ function showQuestion(index) {
 
 function showResult() {
     stopTimer();
+    saveScore();
+
     quizContainer.replaceChildren();
     nextBtn.hidden = true;
     timeSpan.textContent = '-';
@@ -73,7 +75,22 @@ function showResult() {
     result.textContent = `Terminé ! Score : ${score} / ${questions.length}`;
     quizContainer.appendChild(result);
 
-    saveScore();
+    const actions = document.createElement('div');
+
+    const replayLink = document.createElement('a');
+    replayLink.href = `play.php?id=${quizId}`;
+    replayLink.textContent = 'Rejouer';
+
+    const scoresLink = document.createElement('a');
+    scoresLink.href = `scores.php?id=${quizId}`;
+    scoresLink.textContent = 'Voir le classement';
+
+    const menuLink = document.createElement('a');
+    menuLink.href = 'quiz_select.php';
+    menuLink.textContent = 'Choisir un autre quiz';
+
+    actions.append(replayLink, scoresLink, menuLink);
+    quizContainer.appendChild(actions);
 }
 
 nextBtn.addEventListener('click', () => {
