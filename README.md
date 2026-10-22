@@ -1,4 +1,4 @@
-# 🔥 Quiz
+# 🔥 Kapoot
 
 Application de quiz interactive entre joueurs, réalisée en PHP, MySQL, HTML, CSS et JavaScript. On se connecte avec un simple pseudo, on choisit un quiz, on répond aux questions contre la montre, puis on compare son score avec ceux des autres joueurs.
 
