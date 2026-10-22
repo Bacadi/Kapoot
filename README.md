@@ -44,7 +44,7 @@ quiz/
 │       └──  scores_chart.js graphique des classements
 │        
 └── sql/
-    ├── schema.sql          création de la base et des tables
+    ├── quiz_app.sql          création de la base et des tables
     └── seed.sql            données de départ (3 quiz de 5 questions)
 ```
 
