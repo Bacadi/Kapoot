@@ -72,8 +72,18 @@ if ($quiz_id) {
                     <?php endforeach; ?>
                 </tbody>
             </table>
+            <canvas id="scoreChart"></canvas>
         <?php endif; ?>
     </main>
+    <?php if (!empty($ranking)): ?>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            const chartLabels = <?= json_encode(array_column($ranking, 'pseudo'), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;
+            const chartScores = <?= json_encode(array_map('intval', array_column($ranking, 'best_score'))) ?>;
+            const chartTotal = <?= (int) max(array_column($ranking, 'total')) ?>;
+        </script>
+        <script src="assets/js/scores_chart.js"></script>
+    <?php endif; ?>
 </body>
 
 </html>
