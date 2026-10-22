@@ -54,6 +54,7 @@ foreach ($questions as $i => $question) {
 
     <script>
         const questions = <?= json_encode($questions, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;
+        const quizId = <?= (int) $quiz['id'] ?>;
     </script>
     <script src="assets/quiz.js"></script>
 </body>

@@ -71,10 +71,9 @@ function showResult() {
 
     const result = document.createElement('h2');
     result.textContent = `Terminé ! Score : ${score} / ${questions.length}`;
-    const total = questions.length;
     quizContainer.appendChild(result);
 
-    fetch('api/save_score.php', {method: 'POST', score, total})
+    saveScore();
 }
 
 nextBtn.addEventListener('click', () => {
@@ -93,4 +92,15 @@ if (questions.length > 0) {
 } else {
     quizContainer.textContent = "Ce quiz ne contient pas encore de questions.";
     nextBtn.hidden = true;
+}
+
+function saveScore() {
+    fetch('../api/save_score.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ quiz_id: quizId, score: score, total: questions.length })
+    })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
 }
