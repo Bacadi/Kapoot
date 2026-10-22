@@ -88,7 +88,7 @@ La table `scores` fait le lien entre `users` et `quizzes` : un joueur peut jouer
 3. **Créer la base** : dans phpMyAdmin, onglet **Importer**, importer `sql/schema.sql`.
 4. **Ajouter les données de départ** : sélectionner la base `quiz_app`, onglet **Importer**, importer `sql/seed.sql` (format SQL, jeu de caractères utf-8).
 5. **Vérifier la connexion** dans `config/database.php` : par défaut, hôte `localhost`, utilisateur `root`, sans mot de passe. À adapter si ta configuration est différente.
-6. **Ouvrir l'application** dans le navigateur, à l'adresse de `public/index.php` (par exemple `http://localhost/quiz/public/`).
+6. **Ouvrir l'application** dans le navigateur, à l'adresse de `public/index.php` (par exemple `http://localhost/quizz/public/index.php`).
 
 ## Utilisation
 
