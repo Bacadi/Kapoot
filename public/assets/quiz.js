@@ -71,7 +71,10 @@ function showResult() {
 
     const result = document.createElement('h2');
     result.textContent = `Terminé ! Score : ${score} / ${questions.length}`;
+    const total = questions.length;
     quizContainer.appendChild(result);
+
+    fetch('api/save_score.php', {method: 'POST', score, total})
 }
 
 nextBtn.addEventListener('click', () => {
