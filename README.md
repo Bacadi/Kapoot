@@ -116,4 +116,4 @@ La table `scores` fait le lien entre `users` et `quizzes` : un joueur peut jouer
 
 ## Auteur
 
-Projet réalisé dans le cadre de ma formation de développement web.
+Projet réalisé dans le cadre de ma formation de développement web. chez Garage404.
