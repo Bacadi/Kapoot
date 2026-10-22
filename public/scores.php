@@ -82,7 +82,7 @@ if ($quiz_id) {
             const chartScores = <?= json_encode(array_map('intval', array_column($ranking, 'best_score'))) ?>;
             const chartTotal = <?= (int) max(array_column($ranking, 'total')) ?>;
         </script>
-        <script src="assets/js/scores_chart.js"></script>
+        <script src="assets/scores_chart.js"></script>
     <?php endif; ?>
 </body>
 
