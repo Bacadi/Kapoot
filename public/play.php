@@ -33,7 +33,7 @@ foreach ($questions as $i => $question) {
 }
 ?>
 
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,18 +41,21 @@ foreach ($questions as $i => $question) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Playing quiz</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
     <main>
         <h1><?= htmlspecialchars($quiz['title'], ENT_QUOTES, 'UTF-8') ?></h1>
+        <p>Temps : <span id="timer"></span></p>
         <div id="quiz"></div>
+        <button id="nextBtn" disabled>Suivant</button>
     </main>
 
     <script>
         const questions = <?= json_encode($questions, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;
     </script>
-    <script src="assets/js/quiz.js"></script>
+    <script src="assets/quiz.js"></script>
 </body>
 
 </html>
