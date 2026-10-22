@@ -47,9 +47,9 @@ foreach ($questions as $i => $question) {
 <body>
     <main>
         <h1><?= htmlspecialchars($quiz['title'], ENT_QUOTES, 'UTF-8') ?></h1>
-        <p>Temps : <span id="timer"></span></p>
+        <p>Score : <span id="score">0</span> | Temps : <span id="timer"></span></p>
         <div id="quiz"></div>
-        <button id="nextBtn" disabled>Suivant</button>
+        <button id="nextBtn" type="button" disabled>Suivant</button>
     </main>
 
     <script>
