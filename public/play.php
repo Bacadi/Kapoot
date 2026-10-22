@@ -33,17 +33,26 @@ foreach ($questions as $i => $question) {
 }
 ?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Playing quiz</title>
 </head>
+
 <body>
     <main>
-        <h1><?= $quiz['title'] ?></h1>
+        <h1><?= htmlspecialchars($quiz['title'], ENT_QUOTES, 'UTF-8') ?></h1>
+        <div id="quiz"></div>
     </main>
+
+    <script>
+        const questions = <?= json_encode($questions, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;
+    </script>
+    <script src="assets/js/quiz.js"></script>
 </body>
-<script>const questions = <?= json_encode($questions) ?>;</script>
+
 </html>
