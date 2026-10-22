@@ -16,6 +16,7 @@ $quizzes = $req->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <header>
+        <a href="scores.php">Scores</a>
         <a href="logout.php">Déconnexion</a>
     </header>
     <main>
